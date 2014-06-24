@@ -10,38 +10,44 @@ using Microsoft.WindowsAzure.Management;
 using Microsoft.WindowsAzure.Subscriptions;
 using Microsoft.WindowsAzure.Management.Models;
 using Microsoft.WindowsAzure.Management.Compute.Models;
+using System.Configuration;
 
 namespace AzureManagementApplication
 {
     class Program
     {
-        public static String CERT_PATH = @"PATH\ManagementTestCert.cer";
-        public static String SUBS_ID = "ID";
+        public static String CERT_PATH = @ConfigurationManager.AppSettings["certificatePath"];
+        public static String SUBS_ID = ConfigurationManager.AppSettings["subscriptionId"];
         static void Main(string[] args)
         {
             Program program = new Program();
             var creds = program.GetCredentials();
-            
-            int param = int.Parse(args[0]);
-            switch (param)
+            if (args.Length > 0)
             {
-                case 0:
-                    program.ListOperations(creds);
-                    break;
-                case 1:
-                    program.ListHostedServices(creds);
-                    break;
-                case 2:
-                    program.CreateCloudService();
-                    break;
-                case 3:
-                    program.deleteCloudService();
-                    break;
-                default :
-                    Console.WriteLine("Invalid value");
-                    break;
+                int param = int.Parse(args[0]);
+                switch (param)
+                {
+                    case 0:
+                        program.ListOperations(creds);
+                        break;
+                    case 1:
+                        program.ListHostedServices(creds);
+                        break;
+                    case 2:
+                        program.CreateCloudService();
+                        break;
+                    case 3:
+                        program.deleteCloudService();
+                        break;
+                    default:
+                        Console.WriteLine("Invalid value");
+                        break;
+                }
             }
-
+            else
+            {
+                Console.WriteLine("Please pass command line argument");
+            }
             Console.ReadKey();
            
         }
