@@ -37,7 +37,11 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+<<<<<<< HEAD
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+=======
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+>>>>>>> d6c0e9f3b822be453ac86312ba2e242b345b85c8
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -100,14 +104,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="VirtualMachinesSample..cs" />
+=======
+>>>>>>> d6c0e9f3b822be453ac86312ba2e242b345b85c8
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="HostedServicesSample.cs" />
+<<<<<<< HEAD
     <Compile Include="CloudServicesSample.cs" />
+=======
+>>>>>>> d6c0e9f3b822be453ac86312ba2e242b345b85c8
     <Compile Include="Util.cs" />
     <Compile Include="SubscriptionSample.cs" />
     <Compile Include="Program.cs" />

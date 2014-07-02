@@ -35,6 +35,7 @@ namespace AzureSDKSample
                         HostedServicesSample.ListHostedServices();
                         break;
                     case 2:
+<<<<<<< HEAD
                         HostedServicesSample.ListDeploymentDetails();
                         break;
                     case 3:
@@ -51,6 +52,15 @@ namespace AzureSDKSample
                         break;
                     case 7:
                         VirtualMachinesSample.ListVMs();
+=======
+                        CloudServicesSample.CreateCloudService();
+                        break;
+                    case 3:
+                        CloudServicesSample.deleteCloudService();
+                        break;
+                    case 4:
+                        CloudServicesSample.ListCloudServices();
+>>>>>>> d6c0e9f3b822be453ac86312ba2e242b345b85c8
                         break;
                     default:
                         Console.WriteLine("Invalid value");

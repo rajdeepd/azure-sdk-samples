@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.Management.Compute;
 using Microsoft.WindowsAzure.Management.Compute.Models;
+
 using Microsoft.WindowsAzure.Management;
 using Microsoft.WindowsAzure.Subscriptions;
 using Microsoft.WindowsAzure.Management.Models;
@@ -61,16 +62,5 @@ namespace AzureSDKSample
                 }
             }
         }
-        public static void CreateDeployment()
-        {
-            ComputeManagementClient client = Util.getComputeManagementClient();
-            //DeploymentSlot deploymentSlot = DeploymentSlot.Production;
-             DeploymentCreateParameters param = new  DeploymentCreateParameters();
-            param.Name = "test-1";
-            param.PackageUri = new Uri("");
-           
-            //client.Deployments.Create("test-1", deploymentSlot, );
-        }
-
     }
 }
