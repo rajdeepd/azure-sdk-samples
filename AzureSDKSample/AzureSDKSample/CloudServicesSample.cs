@@ -8,11 +8,6 @@ using Microsoft.WindowsAzure.Management.Compute;
 using Microsoft.WindowsAzure.Management;
 using Microsoft.WindowsAzure.Subscriptions;
 using Microsoft.WindowsAzure.Management.Models;
-using Microsoft.WindowsAzure;
-using Microsoft.WindowsAzure.Management.Compute;
-using Microsoft.WindowsAzure.Management;
-using Microsoft.WindowsAzure.Subscriptions;
-using Microsoft.WindowsAzure.Management.Models;
 using Microsoft.WindowsAzure.Management.Compute.Models;
 
 namespace AzureSDKSample
@@ -42,11 +37,13 @@ namespace AzureSDKSample
         {
             ComputeManagementClient client = Util.getComputeManagementClient();
             HostedServiceListResponse response = client.HostedServices.List();
+            Console.WriteLine("Status Code : " + response.StatusCode);
             foreach (var h in response.HostedServices)
             {
-                Console.WriteLine(h.ServiceName);
+                Console.WriteLine("ServiceName : " + h.ServiceName);
+                Console.WriteLine("Affinity Group : " + h.Properties.AffinityGroup);
             }
-            Console.WriteLine("Status Code : " + response.StatusCode);
+           
         }
 
     }
